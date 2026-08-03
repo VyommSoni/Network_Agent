@@ -21,9 +21,9 @@ An AI agent that reads documents, answers questions strictly based on the conten
 ## Hardware Requirements
 - Minimum to run: [e.g. "4 CPU cores, 8GB RAM, no GPU required"]
 - Hardware used for this run:
-  - CPU: [e.g. Intel i7-12700H]
+  - CPU: [e.g. Intel i5-12700H]
   - RAM: [e.g. 16GB]
-  - GPU/Accelerator: [e.g. NVIDIA RTX 3060 6GB / "None — ran on CPU only"]
+  - GPU/Accelerator: [e.g. NVIDIA RTX 3050 6GB / "None — ran on CPU only"]
 
 ## Setup Instructions
 1. Clone the repository:
@@ -44,7 +44,9 @@ An AI agent that reads documents, answers questions strictly based on the conten
    python main.py
    ```
 
-
+## Coding Agent -> Claude(Free Plan)
+  1-> Used for Generating Test cases for Agent
+  2-> Debugging
 
 Example:
 ```
