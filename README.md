@@ -1,6 +1,6 @@
 # Document QA Agent (RAG-based)
 
-An AI agent that reads user-provided documents, answers questions strictly based on the content of those documents using Retrieval-Augmented Generation (RAG), and replies to the user with grounded answers. Includes safe failure handling for cases where the answer isn't found in the document.
+An AI agent that reads documents, answers questions strictly based on the content of those documents using Retrieval-Augmented Generation (RAG), and replies to the user with grounded answers. Includes safe failure handling for cases where the answer isn't found in the document.
 
 ## Features
 - Accepts user-provided documents as the knowledge source (no external/general knowledge used for answering)
@@ -11,15 +11,7 @@ An AI agent that reads user-provided documents, answers questions strictly based
 - Safe failure handling: if the answer isn't present in the document, the agent responds with a clear "not found in document" message instead of guessing or hallucinating
 - Handles edge cases like empty documents, empty queries, or unsupported file formats gracefully
 
-## How It Works (RAG Pipeline)
-1. **Document Ingestion** — User uploads a document (e.g. PDF/TXT/DOCX).
-2. **Chunking** — Document is split into smaller overlapping chunks (e.g. [chunk size: 500 tokens, overlap: 50 tokens] — adjust to your actual values) to preserve context across boundaries.
-3. **Embedding** — Each chunk is converted into a vector embedding using `sentence-transformers/all-MiniLM-L6-v2`.
-4. **Storage** — Embeddings are stored in a vector database ([e.g. FAISS / Chroma / Pinecone]).
-5. **Retrieval** — When a user asks a question, the most relevant chunks are retrieved via similarity search.
-6. **Generation** — Retrieved chunks + user query are passed to the LLM, which generates an answer grounded only in that content.
-7. **Safe Failure Handling** — If no sufficiently relevant chunk is found (below a similarity threshold), the agent responds with a fallback message such as "I couldn't find this information in the provided document" instead of hallucinating an answer.
-
+.
 ## Model Details
 - Embedding model: `sentence-transformers/all-MiniLM-L6-v2` (via `SentenceTransformer`)
 - Chat/generation model: `Qwen/Qwen2.5-0.5B-Instruct`
