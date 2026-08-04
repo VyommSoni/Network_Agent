@@ -28,7 +28,7 @@ An AI agent that reads documents, answers questions strictly based on the conten
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone [your repo URL]
+   git clone [repo URL]
    cd [repo-folder-name]
    ```
 2. Install dependencies:
@@ -45,7 +45,10 @@ An AI agent that reads documents, answers questions strictly based on the conten
    ```
 
 ## Coding Agent -> Claude(Free Plan)
+
   1-> Used for Generating Test cases for Agent
+
+
   2-> Debugging
 
 Example:
